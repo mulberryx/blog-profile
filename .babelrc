@@ -1,0 +1,10 @@
+{  
+  "presets": ["es2015", "stage-0"],
+  "ignore": [
+    "jquery.js",
+    "jquery.min.js",
+    "echarts.min.js",
+    "ckeditor.js"
+  ],
+  "plugins": ["transform-decorators-legacy"]
+}
