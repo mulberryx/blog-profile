@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+WEB_DIR = BASE_DIR + '.web'
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,12 +25,10 @@ SECRET_KEY = "t_&305)jqmxoh2vnc=j@4nlzbn$vq@z%qmu8w67rewsg&l5wc!"
 
 # SECURITY WARNING: don"t run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
   "django.contrib.admin",
   "django.contrib.auth",
@@ -55,7 +54,7 @@ ROOT_URLCONF = "app.urls"
 TEMPLATES = [
   {
     "BACKEND": "django.template.backends.django.DjangoTemplates",
-    "DIRS": [BASE_DIR + "/templates",],
+    "DIRS": [WEB_DIR + "/templates",],
     "APP_DIRS": True,
     "OPTIONS": {
       "context_processors": [
@@ -117,4 +116,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = "/static/"
+STATIC_URL = WEB_DIR + "/static/"
+
+print(STATIC_URL);

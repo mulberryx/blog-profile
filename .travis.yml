@@ -1,6 +1,4 @@
-language: node_js
-node_js:
-  - '5'
+language: python
 before_script:
   - npm run lint
   - npm run test
