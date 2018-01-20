@@ -12,16 +12,19 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+# enviroment
+ENV = "dev"
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-WEB_DIR = BASE_DIR + '.web'
-
+APP_INDEX = BASE_DIR.index("/app")
+WEB_DIR = BASE_DIR[:APP_INDEX] + ".web"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "t_&305)jqmxoh2vnc=j@4nlzbn$vq@z%qmu8w67rewsg&l5wc!"
+SECRET_KEY = "ushgp7_joel_+d)hx187xlv(x!_ezrl+&+_d_e-&ks2cj#ufj("
 
 # SECURITY WARNING: don"t run with debug turned on in production!
 DEBUG = True
@@ -30,7 +33,6 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
-  "django.contrib.admin",
   "django.contrib.auth",
   "django.contrib.contenttypes",
   "django.contrib.sessions",
@@ -117,5 +119,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = WEB_DIR + "/static/"
-
-print(STATIC_URL);
