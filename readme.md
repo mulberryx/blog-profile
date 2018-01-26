@@ -1,4 +1,4 @@
-## blog-robot
+## blog.robot
 blog robot
 
 ### start dev
