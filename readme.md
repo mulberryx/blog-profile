@@ -2,7 +2,7 @@
 blog robot and facade
 
 #### install dependencies
-pip3 install
+pip3 install -r requirements.txt
 
 #### start dev
 python3 manage.py runserver 0.0.0.0:8080 --settings=app.settings.dev
