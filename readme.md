@@ -1,17 +1,20 @@
 ### blog.robot
 blog robot and facade
 
+#### install dependencies
+pip3 install
+
 #### start dev
 python3 manage.py runserver 0.0.0.0:8080 --settings=app.settings.dev
 
 #### deploy prod
 settings=app.settings.prod
 
-#### 创建表结构
+#### migrate
 python3 manage.py migrate
 
-#### 模型有变更
+#### update model
 python3 manage.py makemigrations robot
 
-#### 创建表结构
+#### create model
 python3 manage.py migrate robot
