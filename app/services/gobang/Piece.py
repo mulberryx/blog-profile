@@ -18,7 +18,7 @@ class Piece:
     self.color = color
   
   """
-   * 获取棋子数据的JSON序列化
+   * 获取棋子数据的 JSON 序列化
    * @return {string} 棋子数据JSON序列化
   """
   def getJson(self):
