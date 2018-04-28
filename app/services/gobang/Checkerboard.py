@@ -26,6 +26,7 @@ class Checkerboard:
       for j in range(1, 15):
         grid = Grid (i, j)
       self.board.append(row)
+      
   """
    * 根据行列获取棋盘格
    * @param {number} 行
