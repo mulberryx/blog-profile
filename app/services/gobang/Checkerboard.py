@@ -55,12 +55,12 @@ class Checkerboard:
    * @return {Piece} 最优的棋子
   """
   def getOptimalPiece (self):
-    maxPoint = -1;
+    maxPoint = -1
     optimalPiece = ""
     
     for row in self.board
       for grid in row
-        gridPoint = algorithm.caculatePoints(self.board, self)
+        gridPoint = algorithm.caculatePoints(self, grid)
         
         if gridPoint > maxPoint
           maxPoint = gridPoint
