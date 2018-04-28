@@ -11,3 +11,4 @@ checkerboard = Checkerboard()
 def getOptimalSolution (Pieces)
   checkerboard.sync(Pieces)
   return checkerboard.getOptimalPiece()
+
