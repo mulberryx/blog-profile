@@ -60,7 +60,7 @@ class Checkerboard:
     
     for row in self.board
       for grid in row
-        gridPoint = algorithm.caculatePoints(self.board, grid)
+        gridPoint = algorithm.caculatePoints(self.board, self)
         
         if gridPoint > maxPoint
           maxPoint = gridPoint
