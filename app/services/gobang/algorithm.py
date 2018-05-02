@@ -1,31 +1,28 @@
 # -*- coding: UTF-8 -*-
+# 计算范围
+maxRange = 3
 
 # 打断
-I_1 = 5
-I_2 = 6
-I_3 = 12
-I_4 = 100
+I_1 = 8
+I_2 = 9
+I_3 = 16
+I_4 = 24
 
 # 隔空 1 打断
-I_1_1 = 
-I_1_2 = 
-I_1_3 = 
+I_1_1 = 5
+I_1_2 = 4
+I_1_3 = 3
 
 # 隔空 2 打断
-I_2_1 = 
-I_2_2 = 
-I_2_3 = 
-
-# 隔空 3 打断
-I_3_1 = 
-I_3_2 = 
-I_3_3 = 
+I_2_1 = 3
+I_2_2 = 2
+I_2_3 = 1
 
 # 单边
-S_1 = 
-S_2 = 
-S_3 = 
-S_4 = 
+S_1 = 3
+S_2 = 4
+S_3 = 8
+S_4 = 12
 
 # 单边隔空 1 被堵
 S_1_1 = 0
@@ -34,28 +31,28 @@ S_1_3 = 0
 S_1_4 = 7
 
 # 单边隔空 2 被堵
-S_2_1 = 
-S_2_2 = 
-S_2_3 = 
-S_2_4 = 
+S_2_1 = 0
+S_2_2 = 0
+S_2_3 = 4
+S_2_4 = 9
 
 # 双边
-D_1 = 
-D_2 = 
-D_3 = 
-D_4 = 
+D_1 = 3
+D_2 = 9
+D_3 = 16
+D_4 = 100
 
 # 双边隔空 1 被堵
-D_1_1 = 
-D_1_2 = 
-D_1_3 = 
-D_1_4 = 
+D_1_1 = 0
+D_1_2 = 0
+D_1_3 = 1
+D_1_4 = 12
 
 # 双边隔空 2 被堵
-D_2_1 = 
-D_2_2 = 
-D_2_3 = 
-D_2_4 = 
+D_2_1 = 2
+D_2_2 = 5
+D_2_3 = 7
+D_2_4 = 9
 
 directions = {
   north: [[0, 1], [0, 2], [0, 3], [0, 4]],
@@ -84,7 +81,20 @@ def caculatePoints (checkerboard, grid):
  * @return {number} 点计算出来的分数
 """
 def ergodicAllDirections (checkerboard, grid):
-  return 0
+  weight = 0
+  
+  for key in directions:
+    directionGrids = []
+    displacements = directions[key]
+    for disp in enumerate(displacements):
+      i = grid.i + disp[0]
+      j = grid.j + disp[1]
+      
+      directionGrid = checkerboard.getGrid(i, j)
+      directionGrids.append(directionGrid)
+    
+    weight += caculateDirectionWeight(directionGrids, grid)
+  return weight
 
 """
  * 计算方向权重
