@@ -7,15 +7,14 @@ from algorithm import *
  * 棋盘类
 """
 class Checkerboard:
-  # 棋盘二维列表
-  board = []
-  
   """
    * 构造函数
    * @param {string} 白子身份
    * @constructor
   """
   def __init__ (self, white):
+    self.board = []
+    
     if (white == "player")
       self.computerColor = "black"
     else
@@ -67,4 +66,3 @@ class Checkerboard:
           optimalPiece = Piece(grid.i, grid.j, self.computerColor)
     
     return optimalPiece
- 
