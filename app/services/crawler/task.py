@@ -12,10 +12,9 @@ crawlerTasksDict = {}
 '''
 def startCrawlerTask (url, options):
   crawlerTask = CrawlerTask(url, options)
-  crawlerTask.start()
   crawlerTasksDict[crawlerTask.id] = crawlerTask
   
-  return true
+  return crawlerTask.start()
 
 '''
   * 结束爬虫任务
@@ -24,9 +23,7 @@ def startCrawlerTask (url, options):
 '''
 def stopCrawlerTask (id):
   crawlerTask = crawlerTasksDict[id]
-  crawlerTask.stop()
-  
-  return true
+  return crawlerTask.stop()
 
 '''
   * 暂停爬虫任务
@@ -35,9 +32,7 @@ def stopCrawlerTask (id):
 '''
 def pauseCrawlerTask (id):
   crawlerTask = crawlerTasksDict[id]
-  crawlerTask.pause()
-  
-  return true
+  return crawlerTask.pause()
 
 '''
  * 获取当前有效的爬虫任务列表
