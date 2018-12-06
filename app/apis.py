@@ -7,9 +7,8 @@ from django.core.paginator import Paginator
 from django.contrib.auth import login as authorize
 from django.contrib.auth import logout as authorize_logout
 
-from robot.models import Type
-from robot.models import ChatRecord
-from robot.models import User
+from db.models import Type
+from db.models import ChatRecord
 
 def getWeather (request):
   ip = request.GET["ip"]
@@ -20,6 +19,7 @@ def getWeather (request):
   querys = "ip=" + ip + "&need3HourForcast=0&needAlarm=0&needHourData=0&needIndex=0&needMoreDay=0"
   bodys = {}
   url = host + path + "?" + querys
+
   context = ssl._create_unverified_context()
 
   _request = urllib.request.Request(url)
@@ -169,43 +169,6 @@ def sendMessage (request):
 
   response = {
     id: add.id
-  }
-
-  return HttpResponse(response)
-
-def login (request):
-  username = request.POST["username"]
-  password = request.POST["password"]
-
-  user = User.objects.get(username = username)
-
-  if user == None:
-    response = {
-      errorMsg: "用户名错误"
-    }
-
-    HttpResponseNotFound(response)
-
-  if user.password == password:
-    response = {
-      errorMsg: "密码错误错误"
-    }
-
-    HttpResponseNotFound(response)
-
-  authorize(request, user)
-
-  response = {
-    msg: "登录成功"
-  }
-
-  return HttpResponse(response)
-
-def logout (request):
-  authorize_logout(request)
-
-  response = {
-    msg: "登出成功"
   }
 
   return HttpResponse(response)

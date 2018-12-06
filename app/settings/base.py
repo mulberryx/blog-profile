@@ -1,8 +1,10 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-APP_INDEX = BASE_DIR.index("/app")
-WEB_DIR = BASE_DIR[:APP_INDEX] + ".web"
+SERVER_INDEX = BASE_DIR.index("/server")
+WEB_DIR = BASE_DIR[:SERVER_INDEX] + "/web/dist"
+
+print(WEB_DIR)
 
 SECRET_KEY = "ushgp7_joel_+d)hx187xlv(x!_ezrl+&+_d_e-&ks2cj#ufj("
 
@@ -14,7 +16,8 @@ INSTALLED_APPS = [
   'django.contrib.contenttypes',
   'django.contrib.sessions',
   "django.contrib.messages",
-  "robot",
+  "db",
+  "app",
 ]
 
 MIDDLEWARE = [
@@ -24,8 +27,7 @@ MIDDLEWARE = [
   "django.middleware.csrf.CsrfViewMiddleware",
   "django.contrib.auth.middleware.AuthenticationMiddleware",
   "django.contrib.messages.middleware.MessageMiddleware",
-  "django.middleware.clickjacking.XFrameOptionsMiddleware",
-  "app.middlewares.authorization",
+  "django.middleware.clickjacking.XFrameOptionsMiddleware"
 ]
 
 ROOT_URLCONF = "app.urls"
@@ -33,7 +35,7 @@ ROOT_URLCONF = "app.urls"
 TEMPLATES = [
   {
     "BACKEND": "django.template.backends.django.DjangoTemplates",
-    "DIRS": [WEB_DIR + "/html",],
+    "DIRS": [WEB_DIR,],
     "APP_DIRS": True,
     "OPTIONS": {
       "context_processors": [

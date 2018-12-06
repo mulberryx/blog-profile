@@ -26,12 +26,3 @@ class ChatRecord(models.Model):
   # 最后修改日期
   update_at = models.DateTimeField(auto_now = True)
 
-class User (models.Model):
-  # 用户名
-  username = models.CharField(max_length = 20)
-
-  # 密码
-  password = models.CharField(max_length = 20)
-
-  # email
-  email = models.CharField(max_length = 35)
