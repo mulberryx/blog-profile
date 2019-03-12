@@ -3,22 +3,14 @@
 from django.shortcuts import render
 from django.conf import settings
 
+# 机器人页面
 def robot (request):
   context = {}
   context["env"] = settings.PY_ENV
   return render(request, "robot.html", context)
 
+# 聊天页面
 def talk (request):
   context = {}
   context["env"] = settings.PY_ENV
   return render(request, "talk.html", context)
-
-def admin_login (request):
-  context = {}
-  context["env"] = settings.PY_ENV
-  return render(request, "admin/login.html", context)
-
-def admin (request):
-  context = {}
-  context["env"] = settings.PY_ENV
-  return render(request, "admin/index.html", context)
