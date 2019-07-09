@@ -9,7 +9,7 @@ print(WEB_DIR)
 SECRET_KEY = "ushgp7_joel_+d)hx187xlv(x!_ezrl+&+_d_e-&ks2cj#ufj("
 
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['121.43.186.7','raddeana.tech']
 
 INSTALLED_APPS = [
   'django.contrib.auth',
@@ -54,9 +54,9 @@ DATABASES = {
   "default": {
     "ENGINE": "django.db.backends.mysql",
     "NAME": "robot",
-    "USER": "root",
-    "PASSWORD": "wowcxy2008",
-    "HOST":"localhost",
+    "USER": "admin",
+    "PASSWORD": "Wowcxy2008",
+    "HOST":"127.0.0.1",
     "PORT":"3306",
   }
 }
