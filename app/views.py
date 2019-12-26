@@ -1,5 +1,8 @@
-# -*- coding: utf-8 -*-
-#from django.http import HttpResponse
+'''
+    视图
+    @author Philip
+'''
+# from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 
@@ -14,3 +17,8 @@ def talk (request):
   context = {}
   context["env"] = settings.PY_ENV
   return render(request, "talk.html", context)
+
+def gobang ():
+  context = {}
+  context["env"] = settings.PY_ENV
+  return render(request, "gobang.html", context)    
